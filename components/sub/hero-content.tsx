@@ -1,75 +1,45 @@
 "use client";
 
-import { SparklesIcon } from "@heroicons/react/24/solid";
+import { ArrowDownIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/lib/motion";
+import { LINKS } from "@/constants";
 
-export const HeroContent = () => {
-  return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
-    >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
-        <motion.div
-          variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
-        >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
-          </h1>
-        </motion.div>
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
-        <motion.div
-          variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
-        >
-          <span>
-            Providing{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              the best
-            </span>{" "}
-            project experience.
-          </span>
-        </motion.div>
-
-        <motion.p
-          variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
-        >
-          I&apos;m a Full Stack Software Engineer with experience in Website,
-          Mobile, and Software development. Check out my projects and skills.
-        </motion.p>
-
-        <motion.a
-          variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-        >
-          Learn more
-        </motion.a>
-      </div>
-
-      <motion.div
-        variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
-      >
-        <Image
-          src="/hero-bg.svg"
-          alt="work icons"
-          height={650}
-          width={650}
-          draggable={false}
-          className="select-none"
-        />
+export const HeroContent = () => (
+  <section id="about" className="hero-shell section-shell">
+    <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: 0.12 }} className="hero-copy">
+      <motion.p variants={fadeUp} className="eyebrow">AI &amp; ML Engineer · MLOps · LLMOps · Deep Learning · Agentic AIOps</motion.p>
+      <motion.h1 variants={fadeUp}>
+        Lakshmi Srikanth<br />
+        <span>Polavarapu.</span>
+      </motion.h1>
+      <motion.p variants={fadeUp} className="hero-lede">
+        I build end-to-end AI &amp; Machine Learning systems — integrating Deep Learning Engineering, MLOps, LLMOps, AIOps, and AgentOps. Production AI at scale is 60–70% core software engineering and robust system design, and 30–40% the AI layer itself: from token-level linear algebra to high-throughput inference clusters and autonomous multi-agent loops.
+      </motion.p>
+      <motion.div variants={fadeUp} className="hero-actions">
+        <a className="button button-primary" href="#work">
+          Explore my work <ArrowDownIcon aria-hidden="true" />
+        </a>
+        <a className="button button-secondary" href="/resume.pdf" target="_blank" rel="noreferrer">
+          Resume <ArrowTopRightOnSquareIcon aria-hidden="true" />
+        </a>
+        <a className="button button-secondary" href={LINKS.linkedIn} target="_blank" rel="noreferrer">
+          LinkedIn <ArrowTopRightOnSquareIcon aria-hidden="true" />
+        </a>
       </motion.div>
     </motion.div>
-  );
-};
+    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.25 }} className="hero-system" aria-label="AI engineering capability map">
+      <div className="system-kicker">System capability map</div>
+      <div className="system-core">AI</div>
+      <div className="system-node node-top">LLMs · RAG</div>
+      <div className="system-node node-left">Agents · MCP</div>
+      <div className="system-node node-right">APIs · Full stack</div>
+      <div className="system-node node-bottom">Linux · GPU serving</div>
+    </motion.div>
+  </section>
+);

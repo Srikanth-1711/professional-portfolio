@@ -1,0 +1,17 @@
+
+> space-portfolio@1.0.1 dev
+> next dev --hostname 127.0.0.1
+
+▲ Next.js 16.3.3 (Turbopack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+✓ Ready in 1539ms
+✓ Running next.config.js took 52ms
+
+✓ Generated AGENTS.md and CLAUDE.md for AI agents. Set `agentRules: false` in next.config to disable.
+○ Compiling / ...
+ GET / 200 in 10.9s (next.js: 9.8s, application-code: 1118ms)
+✓ Compiled in 430ms
+ GET / 200 in 235ms (next.js: 66ms, application-code: 169ms)
+ GET / 200 in 237ms (next.js: 16ms, application-code: 222ms)
+ GET / 200 in 182ms (next.js: 16ms, application-code: 167ms)

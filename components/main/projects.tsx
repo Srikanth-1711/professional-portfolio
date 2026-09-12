@@ -1,26 +1,9 @@
 import { ProjectCard } from "@/components/sub/project-card";
 import { PROJECTS } from "@/constants";
 
-export const Projects = () => {
-  return (
-    <section
-      id="projects"
-      className="flex flex-col items-center justify-center py-20"
-    >
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
-        My Projects
-      </h1>
-      <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
-        {PROJECTS.map((project) => (
-          <ProjectCard
-            key={project.title}
-            src={project.image}
-            title={project.title}
-            description={project.description}
-            link={project.link}
-          />
-        ))}
-      </div>
-    </section>
-  );
-};
+export const Projects = () => (
+  <section id="work" className="section-shell">
+    <div className="section-heading"><p className="eyebrow">Selected work</p><h2>Systems built around real engineering problems.</h2><p>Internal work is intentionally described at a high level. Project status is shown exactly as it stands today.</p></div>
+    <div className="project-grid">{PROJECTS.map((project, index) => <ProjectCard key={project.title} project={project} index={index} />)}</div>
+  </section>
+);

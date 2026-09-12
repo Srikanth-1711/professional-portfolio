@@ -1,99 +1,21 @@
-import { SkillDataProvider } from "@/components/sub/skill-data-provider";
-import { SkillText } from "@/components/sub/skill-text";
+import Image from "next/image";
 
-import {
-  BACKEND_SKILL,
-  FRONTEND_SKILL,
-  FULLSTACK_SKILL,
-  OTHER_SKILL,
-  SKILL_DATA,
-} from "@/constants";
+import { SKILL_LOGOS, STACK_GROUPS } from "@/constants";
 
-export const Skills = () => {
-  return (
-    <section
-      id="skills"
-      style={{ transform: "scale(0.9)" }}
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
-    >
-      <SkillText />
+export const Skills = () => (
+  <section id="stack" className="section-shell stack-section">
+    <div className="section-heading"><p className="eyebrow">Engineering stack</p><h2>From AI orchestration to the infrastructure beneath it.</h2></div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {SKILL_DATA.map((skill, i) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-            index={i}
-          />
-        ))}
-      </div>
-
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {FRONTEND_SKILL.map((skill, i) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-            index={i}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {BACKEND_SKILL.map((skill, i) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-            index={i}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {FULLSTACK_SKILL.map((skill, i) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-            index={i}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {OTHER_SKILL.map((skill, i) => (
-          <SkillDataProvider
-            key={skill.skill_name}
-            src={skill.image}
-            name={skill.skill_name}
-            width={skill.width}
-            height={skill.height}
-            index={i}
-          />
-        ))}
-      </div>
-
-      <div className="w-full h-full absolute">
-        <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
-          <video
-            className="w-full h-auto"
-            preload="false"
-            playsInline
-            loop
-            muted
-            autoPlay
-          >
-            <source src="/videos/skills-bg.webm" type="video/webm" />
-          </video>
+    {/* Technology logo strip */}
+    <div className="logo-strip">
+      {SKILL_LOGOS.map((logo) => (
+        <div className="logo-item" key={logo.name} title={logo.name}>
+          <Image src={logo.file} alt={logo.name} width={44} height={44} />
+          <span>{logo.name}</span>
         </div>
-      </div>
-    </section>
-  );
-};
+      ))}
+    </div>
+
+    <div className="stack-grid">{STACK_GROUPS.map((group) => <article className="stack-card" key={group.title}><h3>{group.title}</h3><div>{group.items.map((item) => <span key={item}>{item}</span>)}</div></article>)}</div>
+  </section>
+);

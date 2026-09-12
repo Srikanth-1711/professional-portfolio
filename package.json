@@ -1,6 +1,6 @@
 {
-  "name": "space-portfolio",
-  "version": "1.0.1",
+  "name": "professional-portfolio",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,62 +9,37 @@
     "lint": "eslint ."
   },
   "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhyyy@gmail.com",
-    "url": "https://github.com/sanidhyy"
+    "name": "Lakshmi Srikanth Polavarapu",
+    "email": "lakshmisrikanthpolavarapu@gmail.com",
+    "url": "https://github.com/Srikanth-1711"
   },
-  "description": "Welcome to my full stack Next.js 14 space portfolio.",
+  "description": "Professional AI & ML Engineering Portfolio of Lakshmi Srikanth Polavarapu.",
   "keywords": [
-    "reactjs",
-    "nextjs",
-    "vercel",
-    "react",
-    "space-portfolio",
+    "ai-engineer",
     "portfolio",
-    "react-icons",
-    "cn",
-    "clsx",
-    "3d-portfolio",
-    "3d-website",
-    "sonner",
+    "professional-portfolio",
+    "nextjs",
+    "llms",
+    "rag",
+    "agentic-ai",
+    "mcp",
+    "vllm",
+    "kubernetes",
+    "full-stack-ai",
     "framer-motion",
-    "motion",
-    "animation",
-    "heroicons",
-    "next-themes",
-    "postcss",
-    "prettier",
-    "react-dom",
     "tailwindcss",
-    "tailwindcss-animate",
-    "ui/ux",
-    "js",
-    "javascript",
-    "typescript",
-    "eslint",
-    "html",
-    "css"
+    "typescript"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/space-portfolioit"
+    "url": "https://github.com/Srikanth-1711/professional-portfolio"
   },
-  "homepage": "https://github.com/sanidhyy/space-portfolio#readme",
+  "homepage": "https://github.com/Srikanth-1711/professional-portfolio#readme",
   "bugs": {
-    "url": "https://github.com/sanidhyy/space-portfolio/issues",
-    "email": "sanidhyyy@gmail.com"
+    "url": "https://github.com/Srikanth-1711/professional-portfolio/issues",
+    "email": "lakshmisrikanthpolavarapu@gmail.com"
   },
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
-    },
-    {
-      "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
-    }
-  ],
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@react-three/drei": "^10.7.8",
@@ -84,7 +59,7 @@
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.5",
     "autoprefixer": "^10.5.5",
-    "eslint": "^10.10.0",
+    "eslint": "^9.39.5",
     "eslint-config-next": "16.3.3",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
