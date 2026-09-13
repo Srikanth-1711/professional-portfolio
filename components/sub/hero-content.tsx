@@ -4,6 +4,7 @@ import { ArrowDownIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/ou
 import { motion } from "framer-motion";
 
 import { LINKS } from "@/constants";
+import { getAssetPath } from "@/utils/path";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -25,7 +26,7 @@ export const HeroContent = () => (
         <a className="button button-primary" href="#work">
           Explore my work <ArrowDownIcon aria-hidden="true" />
         </a>
-        <a className="button button-secondary" href="/resume.pdf" target="_blank" rel="noreferrer">
+        <a className="button button-secondary" href={getAssetPath("/resume.pdf")} target="_blank" rel="noreferrer">
           Resume <ArrowTopRightOnSquareIcon aria-hidden="true" />
         </a>
         <a className="button button-secondary" href={LINKS.linkedIn} target="_blank" rel="noreferrer">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { SKILL_LOGOS, STACK_GROUPS } from "@/constants";
+import { getAssetPath } from "@/utils/path";
 
 export const Skills = () => (
   <section id="stack" className="section-shell stack-section">
@@ -10,7 +11,7 @@ export const Skills = () => (
     <div className="logo-strip">
       {SKILL_LOGOS.map((logo) => (
         <div className="logo-item" key={logo.name} title={logo.name}>
-          <Image src={logo.file} alt={logo.name} width={44} height={44} />
+          <Image src={getAssetPath(logo.file)} alt={logo.name} width={44} height={44} />
           <span>{logo.name}</span>
         </div>
       ))}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { EXPERIENCE } from "@/constants";
+import { getAssetPath } from "@/utils/path";
 
 export const Experience = () => (
   <section id="experience" className="section-shell experience-section">
@@ -14,12 +15,12 @@ export const Experience = () => (
             {"logos" in exp && Array.isArray((exp as { logos?: readonly string[] }).logos) && (exp as { logos: readonly string[] }).logos.length > 1 ? (
               (exp as { logos: readonly string[] }).logos.map((l: string, i: number) => (
                 <div key={i} className="w-10 h-10 flex items-center justify-center">
-                  <Image src={l} alt={exp.company} width={40} height={40} className="w-full h-full object-contain" />
+                  <Image src={getAssetPath(l)} alt={exp.company} width={40} height={40} className="w-full h-full object-contain" />
                 </div>
               ))
             ) : (
               <div className="w-12 h-12 flex items-center justify-center">
-                <Image src={exp.logo} alt={exp.company} width={48} height={48} className="w-full h-full object-contain" />
+                <Image src={getAssetPath(exp.logo)} alt={exp.company} width={48} height={48} className="w-full h-full object-contain" />
               </div>
             )}
           </div>
